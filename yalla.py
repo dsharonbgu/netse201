@@ -4,7 +4,8 @@ from zipfile import ZipFile
 
 
 def main():
-    #print('hello for hidden file into an image constructor\n in order to start please provide an occuret absolute path of the files')
+    print('choose ')
+
     hidden_file_abs_path= input("Enter path of the file you want to hide:\n")
     hidden_file_name = os.path.basename(hidden_file_abs_path)
     hidden_file_dir_path = os.path.dirname(hidden_file_abs_path)
