@@ -6,7 +6,6 @@ class b_colors:
     HEADER = '\033[95m'
     OK_BLUE = '\033[94m'
     OK_GREEN = '\033[92m'
-    WARNING = '\033[93m'
     FAIL = '\033[91m'
     ENDC = '\033[0m'
     BOLD = '\033[1m'
@@ -46,7 +45,7 @@ def menu():
     elif case == "2":
         extraction()
     else:
-        print(f'{b_colors.WARNING}undefined choice{b_colors.ENDC}')
+        print('undefined choice\n\n')
         menu()
 
 
