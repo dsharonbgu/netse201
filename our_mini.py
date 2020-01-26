@@ -2,15 +2,6 @@ import os
 from zipfile import ZipFile
 
 
-class b_colors:
-    HEADER = '\033[95m'
-    OK_BLUE = '\033[94m'
-    OK_GREEN = '\033[92m'
-    FAIL = '\033[91m'
-    ENDC = '\033[0m'
-    BOLD = '\033[1m'
-    UNDERLINE = '\033[4m'
-
 def create():
     hidden_file_abs_path = input("Enter path of the file you want to hide:\n")
     hidden_file_name = os.path.basename(hidden_file_abs_path)
@@ -28,7 +19,7 @@ def create():
     command = 'copy /b ' + img_file_name + ' + ' + hidden_zipfile_abs_path
     os.system(command)
     os.remove(hidden_zipfile_abs_path)
-    print(f'{b_colors.OK_BLUE}create file inside your photo success!{b_colors.ENDC}\n')
+    print('Create file inside your photo success!\n')
 
 
 def extraction():
@@ -36,10 +27,11 @@ def extraction():
     img_file_dir_path = os.path.dirname(image_file_abs_path)
     os.chdir(img_file_dir_path)
     ZipFile(image_file_abs_path, 'r').extractall(img_file_dir_path)
-    print(f'{b_colors.OK_BLUE} extract file success!\nthe file is in the same dir of the image{b_colors.ENDC}\n')
+    print('extract file success!\nThe file is in the same dir of the image\n')
+
 
 def menu():
-    case = input("Please enter your choose -\n create malicious image: 1\n extract file from image: 2\n ")
+    case = input("Please enter your choose:\ncreate malicious image: 1\nextract file from image: 2\n ")
     if case == "1":
         create()
     elif case == "2":
@@ -51,7 +43,7 @@ def menu():
 
 def main():
     menu()
-    print(f'{b_colors.BOLD}bye bye!{b_colors.ENDC}')
+    print('bye bye!')
 
 
 if __name__ == "__main__":
